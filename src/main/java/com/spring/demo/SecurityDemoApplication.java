@@ -8,8 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @EnableWebSecurity
 public class SecurityDemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SecurityDemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SecurityDemoApplication.class, args);
+    }
 
 }

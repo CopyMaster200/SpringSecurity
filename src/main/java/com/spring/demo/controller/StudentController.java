@@ -26,8 +26,43 @@ public class StudentController {
         return studentService.fetchStudents();
     }
 
+    @GetMapping("/{id}")
+    public Student getStudentById(@PathVariable int id) {
+        return studentService.fetchStudentById(id);
+    }
+
     @PostMapping
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
+    }
+
+    @PutMapping
+    public Student updateStudent(@RequestBody Student student) {
+        return studentService.updateStudent(student);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteStudentById(@PathVariable int id) {
+        studentService.deleteStudentById(id);
+    }
+
+    @DeleteMapping("/cache/clear")
+    public void clearAllStudentsCache() {
+        studentService.clearAllStudentsCache();
+    }
+
+    @PostMapping("/save-update")
+    public Student saveAndUpdateCache(@RequestBody Student student) {
+        return studentService.saveAndUpdateCache(student);
+    }
+
+    @GetMapping("/conditional/{id}")
+    public Student getStudentConditionally(@PathVariable int id) {
+        return studentService.fetchStudentConditionally(id);
+    }
+
+    @GetMapping("/sync/{id}")
+    public Student getStudentWithSync(@PathVariable int id) {
+        return studentService.fetchStudentWithSync(id);
     }
 }

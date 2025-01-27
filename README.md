@@ -1,2 +1,0 @@
-# SpringSecurity
-Spring security
